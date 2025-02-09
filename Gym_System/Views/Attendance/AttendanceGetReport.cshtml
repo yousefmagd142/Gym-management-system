@@ -1,0 +1,78 @@
+﻿@model AttendanceVM
+
+@{
+    ViewBag.Title = "Attendance";
+}
+
+<h2>Attendance</h2>
+<div class="row">
+    <div class="col-6">
+        <form id="searchForm" method="get">
+            <label for="UserId">Name:</label>
+            <select asp-for="UserId" id="UserId" class="form-control" asp-items="@(ViewBag.Users as List<SelectListItem>)">
+                <option value="">-- Select User --</option>
+            </select>
+
+            <div class="form-group">
+                <label for="StartDate">Start Date</label>
+                <input type="date" asp-for="StartDate" id="startDate" name="startDate" class="form-control" value="@Model.StartDate?.ToString("yyyy-MM-dd")" />
+            </div>
+
+            <div class="form-group">
+                <label for="EndDate">End Date</label>
+                <input type="date" asp-for="EndDate" id="endDate" name="endDate" class="form-control" value="@Model.EndDate?.ToString("yyyy-MM-dd")" />
+            </div>
+
+            <button id="FilterButton" type="submit" asp-action="Filter" class="btn btn-primary">Filter</button>
+        </form>
+    </div>
+</div>
+
+<h3>Attendance Records</h3>
+@if (Model.FilteredAttendancess != null && Model.FilteredAttendancess.Any())
+{
+    <div id="printableAttendance">
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>CheckInTime</th>
+                    <th>Clint</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var transaction in Model.FilteredAttendancess)
+                {
+                    <tr>
+                        <td>@transaction.CheckInTime</td>
+                        <td>@transaction.User.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <button class="btn btn-success mt-3" onclick="printAttendance()">Print Attendance</button>
+}
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        function printAttendance() {
+            var printContents = document.getElementById("printableAttendance").innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            // Replace the body content with the printable section
+            document.body.innerHTML = printContents;
+
+            // Trigger the print dialog
+            window.print();
+
+            // Restore the original content after printing
+            document.body.innerHTML = originalContents;
+
+            // Reload the page to reinitialize any JavaScript
+            location.reload();
+        }
+    </script>
+}

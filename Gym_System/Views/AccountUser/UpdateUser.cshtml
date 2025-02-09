@@ -1,0 +1,140 @@
+﻿@model UpdateUserViewModel
+@{
+    ViewData["Title"] = "Update User";
+}
+<body >
+
+<h2>Update User</h2>
+
+<form asp-action="" style="width:50%" method="post">
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <p>@error.ErrorMessage</p>
+                }
+            </div>
+        }
+    @Html.AntiForgeryToken()
+    <!-- Dropdown for selecting a user -->
+    <div class="form-group">
+        <label for="UserDropdown">Select User:</label>
+        <select id="UserDropdown" class="form-control" asp-items="@(new SelectList(ViewBag.Users, "Value", "Text"))" onchange="fetchMembershipDetails(this.value)">
+            <option value="">-- Select User --</option>
+        </select>
+    </div>
+
+    <!-- Form fields -->
+    <input hidden id="SelectedUserId" asp-for="Id"  class="form-control" id="Name" />
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" id="Name" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" type="email" class="form-control" id="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PhoneNum"></label>
+        <input asp-for="PhoneNum" class="form-control" id="PhoneNum" />
+        <span asp-validation-for="PhoneNum" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" class="form-control" id="UserName" />
+        <span asp-validation-for="UserName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AllowDays"></label>
+        <input asp-for="AllowDays" type="number" class="form-control" id="AllowDays" />
+        <span asp-validation-for="AllowDays" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Balance"></label>
+        <input asp-for="Balance" type="number" class="form-control" id="Balance" />
+        <span asp-validation-for="Balance" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="JoinDate"></label>
+        <input asp-for="JoinDate" type="date" class="form-control" id="JoinDate" />
+        <span asp-validation-for="JoinDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MembershipStartDate"></label>
+        <input asp-for="MembershipStartDate" type="date" class="form-control" id="MembershipStartDate" />
+        <span asp-validation-for="MembershipStartDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Discount"></label>
+        <input asp-for="Discount" type="number" class="form-control" id="Discount" />
+        <span asp-validation-for="Discount" class="text-danger"></span>
+    </div>
+        <div class="form-group">
+            <label for="TrainerId">Select Trainer</label>
+            <select id="TrainerId" asp-for="TarinerId" asp-items="Model.TrainerNames" class="form-control">
+                <option value="">-- Select Trainer --</option>
+            </select>
+        </div>
+
+    <button type="submit" asp-action="UpdateUserpost" class="btn btn-primary mt-2">Update</button>
+</form>
+</body>
+<script>
+    function fetchMembershipDetails(Id) {
+        if (Id) {
+            fetch(`/AccountUser/GetUserDetails?id=${Id}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('Name').value = data.name || '';
+                    document.getElementById('Email').value = data.email || '';
+                    document.getElementById('PhoneNum').value = data.phoneNum || '';
+                    document.getElementById('UserName').value = data.userName || '';
+                    document.getElementById('AllowDays').value = data.allowDays || 0;
+                    document.getElementById('Balance').value = data.balance || 0;
+                    document.getElementById('Discount').value = data.discount || 0;
+                    document.getElementById('JoinDate').value = data.joinDate || '';
+                    document.getElementById('MembershipStartDate').value = data.membershipStartDate || '';
+                    document.getElementById('TrainerId').value = data.trainerid || '--Select Trainer--';
+
+                    document.getElementById('SelectedUserId').value = data.id;
+
+
+                })
+                .catch(error => {
+                    console.error('Error fetching membership details:', error);
+                });
+        } else {
+            // Clear fields if no membership is selected
+                    document.getElementById('Name').value = '';
+                    document.getElementById('Email').value = '';
+                    document.getElementById('PhoneNum').value = '';
+                    document.getElementById('UserName').value = '';
+                    document.getElementById('AllowDays').value = '';
+                    document.getElementById('Balance').value = '';
+                    document.getElementById('Discount').value = '';
+                    document.getElementById('JoinDate').value = '';
+                    document.getElementById('MembershipStartDate').value = '';
+                    document.getElementById('TrainerId').value = '';
+
+                    document.getElementById('SelectedUserId').value = '';
+
+        }
+    }
+</script>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

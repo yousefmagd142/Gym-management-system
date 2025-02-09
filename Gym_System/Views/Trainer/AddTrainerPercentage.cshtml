@@ -1,0 +1,28 @@
+﻿@model TrainerVM
+
+<h2>Add Trainer Percentage</h2>
+<body class="bgimg">
+<div class="row">
+    <div class="col-6">
+            <div asp-validation-summary="All" class="text-danger"></div>
+        <form asp-action="" method="post">
+            <div class="form-group">
+                <label asp-for="TrainerId" class="control-label">Trainer</label>
+                    <select asp-for="TrainerId" asp-items="Model.TrainerList" id="TrainerDropdown" class="form-control" >
+                    <option value="" selected disabled>-- Select Trainer --</option>
+                </select>
+                <span asp-validation-for="TrainerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TrainerPercentage" class="control-label">Trainer Percentage</label>
+                <input asp-for="TrainerPercentage" id="TrainerPercentage" type="number" class="form-control" min="0" max="100" />
+                <span asp-validation-for="TrainerPercentage" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                    <button type="submit" asp-action="AddTrainerPercentage" asp-controller="Trainer" value="Create" class="btn btn-primary">Create</button>
+                    <button type="submit" asp-action="UpdateTrainerPercentage" value="Create" class="btn btn-primary" >Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>

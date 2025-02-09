@@ -1,0 +1,106 @@
+﻿<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Gym System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <div class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </div>
+
+            <ul class="navbar-nav ms-auto">
+                @if (User.IsInRole("Admin") || User.IsInRole("SubAdmin"))
+                {
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="actionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            User Actions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="actionsDropdown">
+                            <!-- Group for Registration and Update User -->
+                            <li>
+                                <h6 class="dropdown-header">User Management</h6>
+                            </li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="AccountUser" asp-action="RegisterUser">Register</a></li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="AccountUser" asp-action="UpdateUser">Update User</a></li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="Attendance" asp-action="AddAttendance">Add Attendance</a></li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="Membership" asp-action="RenewMembership">Renew Membership</a></li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="Freeze" asp-action="Index">Freeze Client</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="actionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Transaction Actions
+                        </a>
+                    <li>
+                        <h6 class="dropdown-header">Transaction Management</h6>
+                    </li>
+                        <ul class="dropdown-menu" aria-labelledby="actionsDropdown">
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="Transaction" asp-action="AddTransaction">Add Transaction</a></li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="Expenses" asp-action="AddExpenses">Add Expenses</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="actionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Training Actions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="actionsDropdown">
+                            <li>
+                                <h6 class="dropdown-header">MemberShip Management</h6>
+                            </li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="Membership" asp-action="GetMemberships">Memberships</a></li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="Trainer" asp-action="AddTrainerPercentage">Trainer Percentage</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-light" href="#" id="actionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Reports
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="actionsDropdown">
+                            <li>
+                                <h6 class="dropdown-header">Reports Management</h6>
+                            </li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="Transaction" asp-action="SearchTransactions">Search Transaction</a></li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="Expenses" asp-action="SearchExpenses">Search Expenses</a></li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="Attendance" asp-action="AttendanceGetReport">Attendance</a></li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="Clint" asp-action="Index">Clint Report</a></li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="Trainer" asp-action="TrainerReport">Trainer Report</a></li>
+                            <li><a class="dropdown-item text-gray" asp-area="" asp-controller="Trainer" asp-action="TrainerSupAdminAttendanceReport">Employee Attendance</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                        </ul>
+                    </li>
+                }
+
+                @if (User.Identity.IsAuthenticated == false)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-light" asp-area="" asp-controller="AccountUser" asp-action="LogIn">LogIn</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-gray" href="#">Welcome @User.Identity.Name</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-gray" asp-area="" asp-controller="AccountUser" asp-action="SignOut">LogOut</a>
+                    </li>
+                  
+                }
+            </ul>
+        </div>
+    </div>
+</nav>
