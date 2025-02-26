@@ -24,6 +24,12 @@
             <option value="">-- Select User --</option>
         </select>
     </div>
+        <div class="form-group">
+            <label for="membershipDropdown">Select Membership:</label>
+            <select id="membershipDropdown" asp-for="MembershipId" class="form-control" asp-items="@Model.Memberships">
+                <option value="">-- Select Membership --</option>
+            </select>
+        </div>
 
     <!-- Form fields -->
     <input hidden id="SelectedUserId" asp-for="Id"  class="form-control" id="Name" />
@@ -106,7 +112,8 @@
                     document.getElementById('JoinDate').value = data.joinDate || '';
                     document.getElementById('MembershipStartDate').value = data.membershipStartDate || '';
                     document.getElementById('TrainerId').value = data.trainerid || '--Select Trainer--';
-
+                    document.getElementById('membershipDropdown').value = data.membershipid || '--Select Membership--';
+                    
                     document.getElementById('SelectedUserId').value = data.id;
 
 
@@ -126,6 +133,7 @@
                     document.getElementById('JoinDate').value = '';
                     document.getElementById('MembershipStartDate').value = '';
                     document.getElementById('TrainerId').value = '';
+                    document.getElementById('membershipDropdown').value = '';
 
                     document.getElementById('SelectedUserId').value = '';
 

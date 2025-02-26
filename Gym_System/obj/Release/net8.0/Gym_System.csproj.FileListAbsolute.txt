@@ -458,3 +458,5 @@ D:\Gym_System\Gym_System\obj\Release\net8.0\refint\Gym_System.dll
 D:\Gym_System\Gym_System\obj\Release\net8.0\Gym_System.pdb
 D:\Gym_System\Gym_System\obj\Release\net8.0\Gym_System.genruntimeconfig.cache
 D:\Gym_System\Gym_System\obj\Release\net8.0\ref\Gym_System.dll
+D:\Gym_System\Gym_System\obj\Release\net8.0\Gym_System.sourcelink.json
+D:\Gym_System\Gym_System\bin\Release\net8.0\libman.json

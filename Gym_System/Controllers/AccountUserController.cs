@@ -66,8 +66,13 @@ namespace Gym_System.Controllers
                         // Create a claims identity with these claims
                         var claimsIdentity = new ClaimsIdentity(claims, IdentityConstants.ApplicationScheme);
 
+                        var authProperties = new AuthenticationProperties
+                        {
+                            IsPersistent = user.RememberMe, // Keep session active if RememberMe is checked
+                            ExpiresUtc = DateTimeOffset.UtcNow.AddHours(24) // Set expiration to 2 hours
+                        };
                         // Sign in using ASP.NET Core Identity's sign-in manager
-                        await _signIn.SignInWithClaimsAsync(account, user.RememberMe, claims);
+                        await _signIn.SignInWithClaimsAsync(account, authProperties, claims);
 
                         return RedirectToAction("Index","Home");
                     }
@@ -193,6 +198,7 @@ namespace Gym_System.Controllers
             ViewBag.Users = await _userservices.GetUserNameListAsync();
             UpdateUserViewModel model = new UpdateUserViewModel();
             model.TrainerNames=await _userservices.GetTrainersAsync();
+            model.Memberships=await _userservices.GetMemberShipList();
             return View(model);
         }
 
@@ -203,6 +209,8 @@ namespace Gym_System.Controllers
             {
                 // Reload dropdown list in case of error
                 ViewBag.Users = await _userservices.GetUserNameListAsync();
+                model.Memberships = await _userservices.GetMemberShipList();
+
                 return View("UpdateUser", model);
             }
 
@@ -210,6 +218,8 @@ namespace Gym_System.Controllers
             {
                 await _userservices.updateuser(model);
                 ViewBag.Users = await _userservices.GetUserNameListAsync();
+                model.Memberships = await _userservices.GetMemberShipList();
+
                 return RedirectToAction("UpdateUser");
             }
             catch (Exception ex)
@@ -219,6 +229,8 @@ namespace Gym_System.Controllers
 
             // Reload dropdown list in case of error
             ViewBag.Users = await _userservices.GetUserNameListAsync();
+            model.Memberships = await _userservices.GetMemberShipList();
+
             return View("UpdateUser", model);
         }
 
@@ -256,7 +268,8 @@ namespace Gym_System.Controllers
                 joinDate = user.JoinDate.ToString("yyyy-MM-dd"),
                 membershipStartDate = user.MembershipStartDate.ToString("yyyy-MM-dd"),
                 discount = Discountuser,
-                trainerid = user.TrainerId
+                trainerid = user.TrainerId,
+                membershipid = user.MembrtshipsId
             });
         }
 

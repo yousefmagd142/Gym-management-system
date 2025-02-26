@@ -1,6 +1,7 @@
 D:\Gym_System\Gym_System\obj\Release\net8.0\win-x86\PubTmp\Out\Gym_System.exe
 D:\Gym_System\Gym_System\obj\Release\net8.0\win-x86\PubTmp\Out\appsettings.Development.json
 D:\Gym_System\Gym_System\obj\Release\net8.0\win-x86\PubTmp\Out\appsettings.json
+D:\Gym_System\Gym_System\obj\Release\net8.0\win-x86\PubTmp\Out\libman.json
 D:\Gym_System\Gym_System\obj\Release\net8.0\win-x86\PubTmp\Out\refs\Microsoft.AspNetCore.Antiforgery.dll
 D:\Gym_System\Gym_System\obj\Release\net8.0\win-x86\PubTmp\Out\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
 D:\Gym_System\Gym_System\obj\Release\net8.0\win-x86\PubTmp\Out\refs\Microsoft.AspNetCore.Authentication.BearerToken.dll

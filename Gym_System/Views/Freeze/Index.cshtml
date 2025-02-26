@@ -7,9 +7,10 @@
 <form asp-action="Index" method="post">
     <div class="form-group">
         <label for="UserId">Select Client:</label>
-        <select id="UserId" asp-items="Model.ClientsList" name="UserId" class="form-control select2">
-            <option value="">-- Select a Client --</option>
-        </select>
+                <select id="UserId" asp-items="Model.ClientsList" name="UserId" class="form-control select2">
+                    <option value="">-- Select a Client --</option>
+                </select>
+
     </div>
 
     <div class="form-group">
@@ -21,3 +22,11 @@
 </form>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('#UserId').select2({
+            placeholder: "Type to search...",
+            allowClear: true
+        });
+    });
+</script>

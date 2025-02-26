@@ -82,16 +82,23 @@ namespace Gym_System.Repository
         public async Task updateuser(UpdateUserViewModel model)
         {
             var user = await _db.ApplicationUsers.FirstOrDefaultAsync(u=>u.Id==model.Id);
+            var membership = await _db.Membrtships.FirstOrDefaultAsync(u => u.Id == user.MembrtshipsId);
+            var membershipupdated = await _db.Membrtships.FirstOrDefaultAsync(u => u.Id == model.MembershipId);
+
             // Update user properties
             user.Name = model.Name;
             user.Email = model.Email;
             user.PhoneNumber = model.PhoneNum;
             user.UserName = model.UserName;
             user.AllowDays = model.AllowDays;
-            user.Balance = model.Balance;
+            if (membershipupdated != null && membership !=null)
+            {
+                user.Balance = model.Balance + (membershipupdated.Price - membership.Price);
+            }
             user.JoinDate = model.JoinDate;
             user.MembershipStartDate = model.MembershipStartDate;
             user.TrainerId = model.TarinerId;
+            user.MembrtshipsId = model.MembershipId;
             await UpdateDiscountAsync(model.Id,model.Discount);
             await _db.SaveChangesAsync();
 

@@ -76,5 +76,16 @@ namespace Gym_System.Controllers
             }
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public JsonResult GetClientNames(string term)
+        {
+            var clientNames = _db.ApplicationUsers
+                .Where(c => c.Name.Contains(term))  // Filter by input text
+                .Select(c => c.Name)
+                .ToList();
+
+            return Json(clientNames);
+        }
+
     }
 }

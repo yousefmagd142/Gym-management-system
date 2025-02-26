@@ -18,8 +18,10 @@ namespace Gym_System.ViewModel
         [Range(0, int.MaxValue, ErrorMessage = "Discount must be a positive number.")]
         public decimal Discount { get; set; }
         public string TarinerId { get; set; }
+        public int MembershipId { get; set; }
         public List<SelectListItem> Names { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TrainerNames { get; set; } = new List<SelectListItem>();
+        public List<SelectListItem> Memberships { get; set; } = new List<SelectListItem>();
 
     }
 }

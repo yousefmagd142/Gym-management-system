@@ -18,6 +18,8 @@ builder.Services.AddAuthentication(options =>
 })
 .AddCookie(options =>
 {
+    options.ExpireTimeSpan = TimeSpan.FromHours(24); // Set expiration to 2 hours
+    options.SlidingExpiration = true; // Refresh expiration if user is active
     options.AccessDeniedPath = "/AccountUser/AccessDenied"; // Correct path to the access denied page
 });
 
