@@ -1,0 +1,118 @@
+﻿@model ClientReportVM
+<body>
+    <h2>Client Report</h2>
+    <div class="row">
+        <div class="col-6">
+            <form method="get">
+                <label for="clientId">Select Client:</label>
+                <select id="clientId" name="clientId" class="form-select mb-3">
+                    <option value="">-- Select Client --</option>
+                    @foreach (var client in Model.ClientsList)
+                    {
+                        <option value="@client.Value">
+                            @client.Text
+                        </option>
+                    }
+                </select>
+                <button type="submit" class="btn btn-primary">Get Report</button>
+            </form>
+        </div>
+    </div>
+    @if (!string.IsNullOrEmpty(Model.ClientName))
+    {
+        <h3>Client Details</h3>
+        <div id="printableTable">
+            <table class="table table-bordered table-striped mt-3">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Field</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Client Name</td>
+                        <td>@Model.ClientName</td>
+                    </tr>
+
+                    @if (!string.IsNullOrEmpty(Model.MembershipName) && Model.MembershipName != "No Membership")
+                    {
+                        <tr>
+                            <td>Membership Name</td>
+                            <td>@Model.MembershipName</td>
+                        </tr>
+                        <tr>
+                            <td>Membership Price</td>
+                            <td>@Model.MembershipPrice.ToString()</td>
+                        </tr>
+                        <tr>
+                            <td>Membership Start Date</td>
+                            <td>@Model.MembershipStartDate.ToShortDateString()</td>
+                        </tr>
+                        <tr>
+                            <td>Membership End Date</td>
+                            <td>@Model.MembershipEndDate.ToShortDateString()</td>
+                        </tr>
+                        <tr>
+                            <td>Membership remain days</td>
+                            <td>@(Model.RemainDays + Model.FreezDays)</td>
+                        </tr>
+
+                        @if (Model.FreezDays > 0)
+                        {
+                            <tr>
+                                <td>Freezing Days</td>
+                                <td>@Model.FreezDays</td>
+                            </tr>
+                            <tr>
+                                <td>Membership End Date After Freezing</td>
+                                <td>@Model.MembershipEndDate.AddDays((int)Model.FreezDays).ToShortDateString()</td>
+                            </tr>
+                        }
+                    }
+
+                    @if (Model.Discount > 0)
+                    {
+                        <tr>
+                            <td>Discount</td>
+                            <td>@Model.Discount</td>
+                        </tr>
+                    }
+                    <tr>
+                        <td>Total Paid</td>
+                        <td>@Model.Paid.ToString()</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-success" onclick="printTable()">Print Table</button>
+            @if (!string.IsNullOrEmpty(Model.ClientPhone))
+            {
+                <a href="https://wa.me/@Model.ClientPhone"
+                   class="btn btn-success"
+                   target="_blank">
+                    <i class="fa fa-whatsapp"></i> WhatsApp Client
+                </a>
+            }
+        </div>
+    }
+</body>
+<script>
+    function printTable() {
+        var printContents = document.getElementById("printableTable").innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        // Set the printable content
+        document.body.innerHTML = printContents;
+
+        // Open the print dialog
+        window.print();
+
+        // Restore the original content
+        document.body.innerHTML = originalContents;
+
+        // Reload the page to reinitialize scripts/styles
+        location.reload();
+    }
+</script>

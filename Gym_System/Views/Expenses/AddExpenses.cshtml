@@ -1,0 +1,44 @@
+﻿@model ExpensesViewMode
+
+@{
+    ViewData["Title"] = "Add Expenses";
+}
+<body class="bgimg">
+
+    <div class="row">
+        <!-- Add Expenses Form -->
+        <div class="col-6">
+            <h2>Add Expenses</h2>
+            <form id="createForm" asp-action="AddExpenses" method="post">
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <label asp-for="MoneyTaken"></label>
+                    <input asp-for="MoneyTaken" class="form-control" />
+                    <span asp-validation-for="MoneyTaken" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="DateTime"></label>
+                    <input asp-for="DateTime" type="datetime-local" class="form-control" value="@Model.DateTime.ToString("yyyy-MM-ddTHH:mm")" />
+                    <span asp-validation-for="DateTime" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="UserId">Name:</label>
+                    <select id="addform" asp-for="UserId" class="form-control" asp-items="@Model.UsersList">
+                        <option value="">-- Select User --</option>
+                    </select>
+                    <span asp-validation-for="UserId" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary mt-2">Add</button>
+            </form>
+        </div>
+    </div>
+</body>

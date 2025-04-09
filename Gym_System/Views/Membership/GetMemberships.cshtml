@@ -1,0 +1,77 @@
+﻿@model MembershipVM
+
+<h2>Create Membership</h2>
+<body class="bgimg">
+    <div class="row">
+        <div class="col-md-6">
+            <form asp-action="">
+                <input type="hidden" id="SelectedMembershipId" name="Id" />
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Name</label>
+                    <input asp-for="Name" id="Name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="DurationInDays" class="control-label">Duration (Days)</label>
+                    <input asp-for="DurationInDays" id="Duration" type="number" class="form-control" min="1" step="1" />
+                    <span asp-validation-for="DurationInDays" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="MaxVisits" class="control-label">Max Visits</label>
+                    <input asp-for="MaxVisits" id="MaxVisits" type="number" class="form-control" min="1" step="1" />
+                    <span asp-validation-for="MaxVisits" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Price" class="control-label" >Price</label>
+                    <input asp-for="Price" id="Price" type="number" min="1" step="10" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="MembershipsList" class="control-label">Select Membership</label>
+                    <select id="MembershipDropdown" class="form-control" asp-items="Model.MembershipsList" onchange="fetchMembershipDetails(this.value)">
+                        <option value="">-- Select Membership --</option>
+                    </select>
+                    <span asp-validation-for="MembershipsList" class="text-danger"></span>
+
+                </div>
+                <div class="form-group mt-3">
+                    <button type="submit" asp-action="CreateMembership" class="btn btn-success">Create Membership</button>
+                    <button type="submit" asp-action="UpdateMembership" class="btn btn-warning">Update Membership</button>
+                    <button type="submit" asp-action="DeleteMembership" class="btn btn-danger">Delete Membership</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    function fetchMembershipDetails(Id) {
+        if (Id) {
+            fetch(`/Membership/GetMembershipDetails?id=${Id}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('Name').value = data.name || '';
+                    document.getElementById('Duration').value = data.durationInDays || 0;
+                    document.getElementById('MaxVisits').value = data.maxVisits || 0;
+                    document.getElementById('Price').value = data.price || 0;
+                     // تعيين معرف العضوية المحدد في الحقل المخفي
+                    document.getElementById('SelectedMembershipId').value = Id;
+                })
+                .catch(error => {
+                    console.error('Error fetching membership details:', error);
+                });
+        } else {
+            // Clear fields if no membership is selected
+            document.getElementById('Name').value = '';
+            document.getElementById('Duration').value = '';
+            document.getElementById('MaxVisits').value = '';
+            document.getElementById('Price').value = '';
+            document.getElementById('SelectedMembershipId').value = '';
+        }
+    }
+</script>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,183 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Gym-management-system-main\\Gym-management-system-main\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym-management-system-main\\gym-management-system-main\\gym_system\\viewmodel\\attendancevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\viewmodel\\attendancevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym-management-system-main\\gym-management-system-main\\gym_system\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym-management-system-main\\gym-management-system-main\\gym_system\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym-management-system-main\\gym-management-system-main\\gym_system\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym-management-system-main\\gym-management-system-main\\gym_system\\views\\freeze\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\views\\freeze\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym-management-system-main\\gym-management-system-main\\gym_system\\controllers\\freezecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\controllers\\freezecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym-management-system-main\\gym-management-system-main\\gym_system\\views\\accountuser\\updateuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\views\\accountuser\\updateuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym-management-system-main\\gym-management-system-main\\gym_system\\controllers\\accountusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\controllers\\accountusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym-management-system-main\\gym-management-system-main\\gym_system\\repository\\registraionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\repository\\registraionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym-management-system-main\\gym-management-system-main\\gym_system\\viewmodel\\updateuserviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\viewmodel\\updateuserviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AttendanceVM.cs",
+              "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\ViewModel\\AttendanceVM.cs",
+              "RelativeDocumentMoniker": "Gym_System\\ViewModel\\AttendanceVM.cs",
+              "ToolTip": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\ViewModel\\AttendanceVM.cs",
+              "RelativeToolTip": "Gym_System\\ViewModel\\AttendanceVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T07:05:21.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Gym_System\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Gym_System\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAABAAAAAAAAAAAAAswCAAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-02-25T19:32:57.42Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "site.js",
+              "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "Gym_System\\wwwroot\\js\\site.js",
+              "ToolTip": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "Gym_System\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-02-25T19:14:55.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Gym_System\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Gym_System\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-25T18:58:47.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FreezeController.cs",
+              "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Controllers\\FreezeController.cs",
+              "RelativeDocumentMoniker": "Gym_System\\Controllers\\FreezeController.cs",
+              "ToolTip": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Controllers\\FreezeController.cs",
+              "RelativeToolTip": "Gym_System\\Controllers\\FreezeController.cs",
+              "ViewState": "AgIAAEEAAAAANDMzMzMbwE8AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-25T18:31:36.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Views\\Freeze\\Index.cshtml",
+              "RelativeDocumentMoniker": "Gym_System\\Views\\Freeze\\Index.cshtml",
+              "ToolTip": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Views\\Freeze\\Index.cshtml",
+              "RelativeToolTip": "Gym_System\\Views\\Freeze\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-25T18:20:24.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RegistraionRepo.cs",
+              "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Repository\\RegistraionRepo.cs",
+              "RelativeDocumentMoniker": "Gym_System\\Repository\\RegistraionRepo.cs",
+              "ToolTip": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Repository\\RegistraionRepo.cs",
+              "RelativeToolTip": "Gym_System\\Repository\\RegistraionRepo.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAIAwwGgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T18:03:58.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UpdateUser.cshtml",
+              "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
+              "RelativeDocumentMoniker": "Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
+              "ToolTip": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
+              "RelativeToolTip": "Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
+              "ViewState": "AgIAAHAAAAAAAAAAAABQPY4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-19T17:56:23.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountUserController.cs",
+              "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Controllers\\AccountUserController.cs",
+              "RelativeDocumentMoniker": "Gym_System\\Controllers\\AccountUserController.cs",
+              "ToolTip": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Controllers\\AccountUserController.cs",
+              "RelativeToolTip": "Gym_System\\Controllers\\AccountUserController.cs",
+              "ViewState": "AgIAAMwAAAAANDMzMzMbwOgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T17:55:16.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UpdateUserViewModel.cs",
+              "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\ViewModel\\UpdateUserViewModel.cs",
+              "RelativeDocumentMoniker": "Gym_System\\ViewModel\\UpdateUserViewModel.cs",
+              "ToolTip": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\ViewModel\\UpdateUserViewModel.cs",
+              "RelativeToolTip": "Gym_System\\ViewModel\\UpdateUserViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-19T17:54:05.114Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "Gym_System.Controllers.APIController",
+    "Method": "CheckId",
+    "RelativePath": "api/API/CheckId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Gym_System.Controllers.APIController",
+    "Method": "CheckOut",
+    "RelativePath": "api/API/CheckOut",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

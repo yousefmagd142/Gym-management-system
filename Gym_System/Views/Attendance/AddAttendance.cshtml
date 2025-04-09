@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Create Attendance";
+}
+<body class="bgimg">
+<h2>Create Attendance</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="AddAttendancepost" method="post">
+            <div class="form-group">
+                <label for="userId">Select User:</label>
+                <select id="userId" name="Id" class="form-control" asp-items="@(ViewBag.Users)">
+                    <option value="">-- Select User --</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-3">Add Attendance</button>
+        </form>
+
+    </div>
+</div>
+</body>

@@ -1,0 +1,108 @@
+﻿@model TrainerReportViewModel
+
+@{
+    ViewData["Title"] = "SKY Gym Trainer Report";
+}
+
+<h2>Trainer Report</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="TrainerReportReport" method="get">
+            <div class="form-group">
+                <label for="trainerId">Select Trainer:</label>
+                <select id="trainerId" name="trainerId" class="form-control" asp-items="Model.TrainerList">
+                    <option value="">-- Select Trainer --</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" class="form-control" value="@ViewData["startDate"]" />
+            </div>
+
+            <div class="form-group">
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" class="form-control" value="@ViewData["endDate"]" />
+            </div>
+
+            <button type="submit" class="btn btn-primary mt-2">Generate Report</button>
+        </form>
+    </div>
+</div>
+
+@if (Model.Clients != null && Model.Clients.Any())
+{
+    <h3>Report for @Model.TrainerName</h3>
+
+    <div id="printableTable">
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Client Name</th>
+                    <th>Membership Name</th>
+                    <th>Membership Start Date</th>
+                    <th>Membership Price</th>
+                    <th>Discount</th>
+                    <th>Total Paid</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var client in Model.Clients)
+                {
+                    <tr>
+                        <td>@client.ClientName</td>
+                        <td>@client.MembershipName</td>
+                        <td>@client.MembershipStartDate.ToShortDateString()</td>
+                        <td>@client.MembershipPrice.ToString()</td>
+                        <td>@client.Discount.ToString()</td>
+                        <td>@client.Paid.ToString()</td>
+                    </tr>
+                }
+                <tr>
+                    <td colspan="3" class="text-right"><strong>Totals:</strong></td>
+                    <td><strong>@Model.TotalMembershipRevenue.ToString()</strong></td>
+                    <td><strong>@Model.TotalDiscount.ToString()</strong></td>
+                    <td><strong>@Model.TotalPaid.ToString()</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="6" class="text-right"><strong>Trainer Earnings: @Model.Trainerearnings.ToString()</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button class="btn btn-success mt-3" onclick="printTable()">Print Table</button>
+}
+@section Scripts {
+    <script>
+        function printTable() {
+            var printContents = document.getElementById("printableTable").innerHTML;
+            var originalContents = document.body.innerHTML;
+            // Add a custom header with the trainer name
+            var trainerName = "@Model.TrainerName"; // Fetch the trainer name from the Razor model
+            var header = `
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <h2>Trainer Report</h2>
+                    <h3>Trainer Name: ${trainerName}</h3>
+                </div>
+            `;
+            // Combine the header and table contents
+            var contentToPrint = header + printContents;
+
+            // Replace the body content with the header and printable section
+            document.body.innerHTML = contentToPrint;
+
+            // Trigger the print dialog
+            window.print();
+
+            // Restore the original content and title after printing
+            document.body.innerHTML = originalContents;
+            // Reload the page to reinitialize any JavaScript
+            location.reload();
+        }
+    </script>
+}
+
+
+

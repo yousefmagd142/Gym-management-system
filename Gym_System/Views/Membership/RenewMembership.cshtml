@@ -1,0 +1,37 @@
+﻿@model RenewMembershipVM
+<body class="bgimg">
+
+<div class="row">
+    <div class="col-6">
+        <h2>Renew Membership</h2>
+
+        <form asp-action="RenewMembershippost" method="post">
+            <div class="form-group">
+                <label asp-for="SelectedUserId">User</label>
+                <select asp-for="SelectedUserId" asp-items="Model.User" class="form-control">
+                    <option value="">-- Select User --</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="SelectedMembershipId">Membership</label>
+                <select asp-for="SelectedMembershipId" asp-items="Model.Membership" class="form-control">
+                    <option value="">-- Select Membership --</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AllowDays"></label>
+                <input asp-for="AllowDays" class="form-control" />
+                <span asp-validation-for="AllowDays" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Discount" class="control-label">Discount</label>
+                <input asp-for="Discount" id="AllowDays" type="number" class="form-control" min="0" step="10" />
+                <span asp-validation-for="Discount" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-info mt-2">Renew</button>
+        </form>
+    </div>
+</div>
+</body>

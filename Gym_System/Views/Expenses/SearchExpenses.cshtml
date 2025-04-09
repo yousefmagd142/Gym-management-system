@@ -1,0 +1,106 @@
+﻿@model ExpensesViewMode
+
+@{
+    ViewData["Title"] = "Search Expenses";
+}
+
+<div class="row">
+    <div class="col-6">
+        <h2>Search Expenses</h2>
+        <form id="searchForm" method="get">
+            <label for="UserId">Name:</label>
+            <select id="UserId" asp-for="UserId" class="form-control" asp-items="@Model.UsersList">
+                <option value="">-- Select User --</option>
+            </select>
+            <div class="form-group mr-2">
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" class="form-control" value="@Model.StartDate?.ToString("yyyy-MM-dd")" />
+            </div>
+
+            <div class="form-group mr-2">
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" class="form-control" value="@Model.EndDate?.ToString("yyyy-MM-dd")" />
+            </div>
+
+            <button type="submit" asp-action="SearchExpensessearch" class="btn btn-info mt-2">Search</button>
+        </form>
+    </div>
+</div>
+
+@if (Model.FilteredTransactions != null && Model.FilteredTransactions.Any())
+{
+        <h4>Filtered Expenses</h4>
+        <div id="printableTransactions">
+            <table class="table table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Mony Tacken</th>
+                        <th>Description</th>
+                        <th>Date</th>
+                        <th>Employee</th>
+                        <th class="no-print">Actions</th> <!-- Add a class to the "Actions" column -->
+                        <th class="no-print">Whatsapp</th> <!-- Add a class to the "Actions" column -->
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var transaction in Model.FilteredTransactions)
+                {
+                            <tr>
+                                <td>@transaction.Id</td>
+                                <td>@transaction.MoneyTaken</td>
+                                <td>@transaction.Description</td>
+                                <td>@transaction.DateTime.ToString("yyyy-MM-dd HH:mm")</td>
+                                <td>@(transaction.User?.Name ?? "N/A")</td>
+                                <td class="no-print">
+                                    <form asp-action="DeleteExpenses">
+                                @Html.AntiForgeryToken()
+                                        <input type="hidden" name="id" value="@transaction.Id" />
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+
+                                </td>
+                                <td>
+                            @if (!string.IsNullOrEmpty((transaction.User?.PhoneNumber ?? "N/A")))
+                            {
+                                            <a href="https://wa.me/@transaction.User.PhoneNumber"
+                                               class="btn btn-success"
+                                               target="_blank">
+                                                <i class="fa fa-whatsapp"></i> WhatsApp Client
+                                            </a>
+                            }
+                                </td>
+                            </tr>
+                }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td  class="text-start"><strong>Total Expenses:</strong></td>
+                        <td colspan="6"><strong>@Model.totaltaken.ToString()</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <button class="btn btn-success mt-3" onclick="printTransactions()">Print Expenses</button>
+}
+
+@section Scripts {
+        <script>
+            function printTransactions() {
+                var printContents = document.getElementById("printableTransactions").innerHTML;
+                var originalContents = document.body.innerHTML;
+
+                // Replace the body content with the printable section
+                document.body.innerHTML = printContents;
+
+                // Trigger the print dialog
+                window.print();
+
+                // Restore the original content after printing
+                document.body.innerHTML = originalContents;
+
+                // Reload the page to reinitialize any JavaScript
+                location.reload();
+            }
+        </script>
+}
