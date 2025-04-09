@@ -60,7 +60,7 @@
               "RelativeDocumentMoniker": "Gym_System\\ViewModel\\AttendanceVM.cs",
               "ToolTip": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\ViewModel\\AttendanceVM.cs",
               "RelativeToolTip": "Gym_System\\ViewModel\\AttendanceVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T07:05:21.606Z",
               "EditorCaption": ""
@@ -75,8 +75,7 @@
               "RelativeToolTip": "Gym_System\\wwwroot\\css\\site.css",
               "ViewState": "AgIAABAAAAAAAAAAAAAswCAAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-25T19:32:57.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T19:32:57.42Z"
             },
             {
               "$type": "Document",
@@ -136,8 +135,7 @@
               "RelativeToolTip": "Gym_System\\Repository\\RegistraionRepo.cs",
               "ViewState": "AgIAAEAAAAAAAAAAAIAwwGgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T18:03:58.591Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-19T18:03:58.591Z"
             },
             {
               "$type": "Document",

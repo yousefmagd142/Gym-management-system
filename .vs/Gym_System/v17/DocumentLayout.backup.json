@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Gym-management-system-main\\Gym-management-system-main\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym-management-system-main\\gym-management-system-main\\gym_system\\viewmodel\\attendancevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\viewmodel\\attendancevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym-management-system-main\\gym-management-system-main\\gym_system\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -51,6 +55,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AttendanceVM.cs",
+              "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\ViewModel\\AttendanceVM.cs",
+              "RelativeDocumentMoniker": "Gym_System\\ViewModel\\AttendanceVM.cs",
+              "ToolTip": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\ViewModel\\AttendanceVM.cs",
+              "RelativeToolTip": "Gym_System\\ViewModel\\AttendanceVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T07:05:21.606Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "site.css",
               "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "Gym_System\\wwwroot\\css\\site.css",
@@ -58,12 +75,11 @@
               "RelativeToolTip": "Gym_System\\wwwroot\\css\\site.css",
               "ViewState": "AgIAABAAAAAAAAAAAAAswCAAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-25T19:32:57.42Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T19:32:57.42Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "site.js",
               "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "Gym_System\\wwwroot\\js\\site.js",
@@ -75,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Gym_System\\Views\\Shared\\_Layout.cshtml",
@@ -87,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "FreezeController.cs",
               "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Controllers\\FreezeController.cs",
               "RelativeDocumentMoniker": "Gym_System\\Controllers\\FreezeController.cs",
@@ -99,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Views\\Freeze\\Index.cshtml",
               "RelativeDocumentMoniker": "Gym_System\\Views\\Freeze\\Index.cshtml",
@@ -111,7 +127,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "RegistraionRepo.cs",
               "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Repository\\RegistraionRepo.cs",
               "RelativeDocumentMoniker": "Gym_System\\Repository\\RegistraionRepo.cs",
@@ -123,7 +139,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "UpdateUser.cshtml",
               "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
               "RelativeDocumentMoniker": "Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
@@ -135,7 +151,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "AccountUserController.cs",
               "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\Controllers\\AccountUserController.cs",
               "RelativeDocumentMoniker": "Gym_System\\Controllers\\AccountUserController.cs",
@@ -147,7 +163,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "UpdateUserViewModel.cs",
               "DocumentMoniker": "D:\\Gym-management-system-main\\Gym-management-system-main\\Gym_System\\ViewModel\\UpdateUserViewModel.cs",
               "RelativeDocumentMoniker": "Gym_System\\ViewModel\\UpdateUserViewModel.cs",

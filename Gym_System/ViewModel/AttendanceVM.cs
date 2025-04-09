@@ -6,6 +6,7 @@ namespace Gym_System.ViewModel
     public class AttendanceVM
     {
         //comment
+        //another comment
         public DateTime CheckInTime { get; set; }
         public string? UserId { get; set; }
 
