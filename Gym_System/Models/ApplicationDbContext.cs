@@ -6,6 +6,7 @@ namespace Gym_System.Models
 {
     public class ApplicationDbContext:IdentityDbContext<ApplicationUser>
     {
+        //comment
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options){}
         protected override void OnModelCreating(ModelBuilder builder)
