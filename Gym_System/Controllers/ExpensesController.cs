@@ -122,6 +122,7 @@ namespace Gym_System.Controllers
                 EndDate = model.EndDate,
                 UserId = model.UserId, // Preserve the selected UserId
                 totaltaken = totaltaken,
+                UsersList = await _userServices.GetTrainersAndSubAdminAsync(),
             };
 
             return View("SearchExpenses", viewModel);

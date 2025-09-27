@@ -18,10 +18,14 @@ builder.Services.AddAuthentication(options =>
 })
 .AddCookie(options =>
 {
-    options.ExpireTimeSpan = TimeSpan.FromHours(24); // Set expiration to 2 hours
-    options.SlidingExpiration = true; // Refresh expiration if user is active
-    options.AccessDeniedPath = "/AccountUser/AccessDenied"; // Correct path to the access denied page
+    options.ExpireTimeSpan = TimeSpan.FromHours(24);
+    options.SlidingExpiration = true;
+    options.AccessDeniedPath = "/AccountUser/AccessDenied";
+
+    options.Cookie.HttpOnly = true;
+    options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest; // Only secure if request is
 });
+
 
 
 // Add services to the container.
@@ -36,6 +40,12 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 builder.Services.AddScoped<IRegistraionRepo, RegistraionRepo>();
 builder.Services.AddScoped<ITrainerRepo, TrainerRepo>();
 //register usermanager ,rolemanager ==> userstore, rolestor
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(1320); // Set your desired timeout
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 
 var app = builder.Build();
@@ -53,6 +63,7 @@ else
 
 app.UseStaticFiles();
 app.UseRouting();
+app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
 

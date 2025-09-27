@@ -459,3 +459,4 @@ D:\Gym_System\Gym_System\bin\Debug\net8.0\Microsoft.CodeAnalysis.Razor.dll
 D:\Gym_System\Gym_System\bin\Debug\net8.0\Rotativa.AspNetCore.dll
 D:\Gym_System\Gym_System\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\Gym_System\Gym_System\obj\Debug\net8.0\Gym_System.sourcelink.json
+D:\Gym_System\Gym_System\bin\Debug\net8.0\libman.json

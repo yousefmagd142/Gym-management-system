@@ -13,6 +13,7 @@ namespace Gym_System.Models
 
         public int? MembrtshipsId { get; set; } = null;
         public Membrtship? Membrtships { get; set;}
+        public Freeze? Freezes { get; set; }
         public DateTime MembershipStartDate { get; set; }=DateTime.Now;
         public string? MembershipState { get; set; }="NotActive";
         public decimal Balance { get; set; } = 0;

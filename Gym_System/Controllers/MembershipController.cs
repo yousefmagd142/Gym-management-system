@@ -131,13 +131,46 @@ namespace Gym_System.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _userservices.RenewMembership(model.SelectedUserId,model.SelectedMembershipId,model.AllowDays);
-                if(model.Discount>0)
+                await _userservices.RenewMembership(model);
+                if(model.Discount>=0)
                 {
                     await _userservices.UpdateDiscountAsync(model.SelectedUserId, model.Discount);
                 }
             }
-            return RedirectToAction("AddTransaction", "Transaction");
+            var model2 = await _userservices.GetMemberShipListForMembership();
+
+            return RedirectToAction("RenewMembership");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetUserDetails(string id)
+        {
+            var user = await _userservices.GetUserById(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var Discount = await _userservices.GetClientDiscount(id);
+            decimal Discountuser = 0;
+
+            if (Discount == null)
+            {
+                Discountuser = 0;
+            }
+            else
+            {
+                Discountuser = Discount.Discount;
+            }
+
+            return Json(new
+            {
+                id = user.Id,
+                name = user.Name,
+                allowDays = user.AllowDays,
+                membershipStartDate = user.MembershipStartDate.AddDays(user.Membrtships?.DurationInDays ?? 0).AddDays(user.Freezes?.FreezeDays ?? 0).ToString("yyyy-MM-dd"),
+                discount = Discountuser,
+                membershipid = user.MembrtshipsId
+            });
         }
     }
 }

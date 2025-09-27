@@ -9,5 +9,15 @@
 
 </head>
 <body class="bgimg">
+    @if (User.IsInRole("Admin") || User.IsInRole("SubAdmin"))
+                {
+    <div class="container">
+        <div class="d-flex justify-content-end mt-3">
+            <a href="/Clint" class="btn btn-primary">
+                Go to Client Page
+            </a>
+        </div>
+    </div>
+                }
 </body>
 

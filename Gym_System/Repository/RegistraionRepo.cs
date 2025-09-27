@@ -23,7 +23,6 @@ namespace Gym_System.Repository
         {
             // Retrieve the membership from the database
             var membership = _db.Membrtships.FirstOrDefault(i => i.Id == newUser.MembrtshipsId);
-
             // Initialize the ApplicationUser object
             var userAccount = new ApplicationUser
             {
@@ -36,9 +35,10 @@ namespace Gym_System.Repository
                 JoinDate = DateTime.Now,
                 MembrtshipsId = membership != null ? newUser.MembrtshipsId : null,
                 MembershipStartDate = newUser.MembershipStartDate,
-                Balance = membership != null ? membership.Price : 0, // Default to 0 if membership is null
+                Balance = membership != null ? membership.Price - newUser.Discount : 0, // Default to 0 if membership is null
                 AllowDays = newUser.AllowDays,
                 TrainerId = newUser.TrainerId,
+                
             };
             return userAccount;
         }
@@ -133,7 +133,7 @@ namespace Gym_System.Repository
         }
         public async Task<ApplicationUser> GetUserById(string id)
         {
-            var user = await _db.Users.Include(i=>i.Membrtships).Include(s=>s.Trainer).FirstOrDefaultAsync(u=>u.Id==id);
+            var user = await _db.Users.Include(h => h.Freezes).Include(i=>i.Membrtships).Include(s=>s.Trainer).FirstOrDefaultAsync(u=>u.Id==id);
             if (user == null)
             {
                 throw new KeyNotFoundException($"User with ID '{id}' was not found.");
@@ -272,17 +272,17 @@ namespace Gym_System.Repository
             }).ToListAsync();
 
         }
-        public async Task RenewMembership(string userid, int membershipid,int AllowDays)
+        public async Task RenewMembership(RenewMembershipVM model)
         {
-            var user =await _db.ApplicationUsers.FirstOrDefaultAsync(i=>i.Id == userid);
-            var membership = await _db.Membrtships.FirstOrDefaultAsync(m=>m.Id == membershipid);
+            var user =await _db.ApplicationUsers.FirstOrDefaultAsync(i=>i.Id == model.SelectedUserId);
+            var membership = await _db.Membrtships.FirstOrDefaultAsync(m=>m.Id == model.SelectedMembershipId);
 
             var balance = user.Balance;
             var membershipprice = membership.Price;
-            user.Balance = balance+membershipprice;
+            user.Balance = balance+membershipprice-model.Discount;
             user.MembrtshipsId= membership.Id;
-            user.MembershipStartDate=DateTime.Now;
-            user.AllowDays = AllowDays;
+            user.MembershipStartDate=model.MembershipStartDate;
+            user.AllowDays = model.AllowDays;
             _db.SaveChanges();
         }
 

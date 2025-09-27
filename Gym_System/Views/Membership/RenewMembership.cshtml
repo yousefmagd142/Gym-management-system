@@ -1,37 +1,94 @@
 ﻿@model RenewMembershipVM
+
 <body class="bgimg">
+    <div class="row">
+        <div class="col-6">
+            <h2>Renew Membership</h2>
 
-<div class="row">
-    <div class="col-6">
-        <h2>Renew Membership</h2>
+            <form asp-action="RenewMembershippost" method="post">
+                <!-- Select User Dropdown -->
+                <div class="form-group">
+                    <label asp-for="SelectedUserId">User</label>
+                    <select id="UserDropdown" asp-items="Model.User" class="form-control" onchange="fetchMembershipDetails(this.value)">
+                        <option value="">-- Select User --</option>
+                    </select>
+                </div>
 
-        <form asp-action="RenewMembershippost" method="post">
-            <div class="form-group">
-                <label asp-for="SelectedUserId">User</label>
-                <select asp-for="SelectedUserId" asp-items="Model.User" class="form-control">
-                    <option value="">-- Select User --</option>
-                </select>
-            </div>
+                <!-- Read-Only Name Field (from JS) -->
+                <div class="form-group">
+                    <label for="Name">Name</label>
+                    <input type="text" id="Name" class="form-control" readonly />
+                </div>
 
-            <div class="form-group">
-                <label asp-for="SelectedMembershipId">Membership</label>
-                <select asp-for="SelectedMembershipId" asp-items="Model.Membership" class="form-control">
-                    <option value="">-- Select Membership --</option>
-                </select>
-            </div>
+                <!-- Select Membership Dropdown -->
+                <div class="form-group">
+                    <label asp-for="SelectedMembershipId">Membership</label>
+                    <select id="membershipDropdown" asp-for="SelectedMembershipId" asp-items="Model.Membership" class="form-control">
+                        <option id="memvalue" value="" >-- Select Membership --</option>
+                    </select>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="AllowDays"></label>
-                <input asp-for="AllowDays" class="form-control" />
-                <span asp-validation-for="AllowDays" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Discount" class="control-label">Discount</label>
-                <input asp-for="Discount" id="AllowDays" type="number" class="form-control" min="0" step="10" />
-                <span asp-validation-for="Discount" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-info mt-2">Renew</button>
-        </form>
+                <!-- Hidden field to store selected user id -->
+                <input type="hidden" id="SelectedUserId" asp-for="SelectedUserId" />
+
+                <!-- Membership Start Date -->
+                <div class="form-group">
+                    <label asp-for="MembershipStartDate" class="control-label">Membership End Date</label>
+                    <input asp-for="MembershipStartDate" id="MembershipStartDate" type="date" class="form-control" />
+                    <span asp-validation-for="MembershipStartDate" class="text-danger"></span>
+                </div>
+
+                <!-- Allow Days -->
+                <div class="form-group">
+                    <label asp-for="AllowDays"></label>
+                    <input id="AllowDays" asp-for="AllowDays" class="form-control" />
+                    <span asp-validation-for="AllowDays" class="text-danger"></span>
+                </div>
+
+                <!-- Discount -->
+                <div class="form-group">
+                    <label asp-for="Discount" class="control-label">Discount</label>
+                    <input asp-for="Discount" id="Discount" type="number" class="form-control" min="0" step="10" />
+                    <span asp-validation-for="Discount" class="text-danger"></span>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn btn-info mt-2">Renew</button>
+            </form>
+        </div>
     </div>
-</div>
 </body>
+
+<!-- JavaScript to fetch user details -->
+<script>
+    function fetchMembershipDetails(Id) {
+        if (Id) {
+            fetch(`/Membership/GetUserDetails?id=${Id}`)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById('Name').value = data.name || '';
+                    document.getElementById('AllowDays').value = data.allowDays ?? 0;
+                    document.getElementById('Discount').value = data.discount ?? 0;
+                    document.getElementById('MembershipStartDate').value = data.membershipStartDate || '';
+                    document.getElementById('membershipDropdown').value = data.membershipid || '';
+                    document.getElementById('memvalue').value = data.membershipid || '';
+                    document.getElementById('SelectedUserId').value = data.id || '';
+                })
+                .catch(error => {
+                    console.error('Error fetching membership details:', error);
+                });
+        } else {
+            ['Name', 'AllowDays', 'Discount', 'MembershipStartDate', 'membershipDropdown', 'SelectedUserId'].forEach(id => {
+                document.getElementById(id).value = '';
+            });
+        }
+    }
+</script>
+
+<!-- Validation Scripts -->
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

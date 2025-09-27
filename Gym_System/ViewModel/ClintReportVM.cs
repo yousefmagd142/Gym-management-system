@@ -12,6 +12,7 @@ namespace Gym_System.ViewModel
         public int RemainDays { get; set; }
         public decimal MembershipPrice { get; set; }
         public decimal Discount { get; set; }
+        public decimal Balance { get; set; }
         public decimal Paid { get; set; }
         public string ClientPhone { get; set; } // Client's phone number for WhatsApp
 

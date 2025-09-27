@@ -27,7 +27,7 @@ namespace Gym_System.Repository
         public Task<ClintDiscount> GetClientDiscount(string id);
         public Task<MembershipVM> GetMemberShipListForMembership();
         public Task<RenewMembershipVM> GetMemberShipListUserList();
-        public Task RenewMembership(string userid, int membershipid, int allowdays);
+        public Task RenewMembership(RenewMembershipVM model);
         public Task<Membrtship> GetMemberShipByID(int Id);
         public Task UpdateMemberShip(int Id,MembershipVM model);
         public Task DeleteMemberShip(int Id);

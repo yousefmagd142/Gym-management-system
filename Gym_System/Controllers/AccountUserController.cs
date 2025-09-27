@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Gym_System.Controllers
 {
@@ -57,10 +58,10 @@ namespace Gym_System.Controllers
 
                         // Create a list of claims, adding roles as claims
                         var claims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name, user.UserName),
-                    new Claim(ClaimTypes.NameIdentifier, account.Id)
-                };
+                        {
+                            new Claim(ClaimTypes.Name, user.UserName),
+                            new Claim(ClaimTypes.NameIdentifier, account.Id)
+                        };
                         claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
 
                         // Create a claims identity with these claims
@@ -69,7 +70,7 @@ namespace Gym_System.Controllers
                         var authProperties = new AuthenticationProperties
                         {
                             IsPersistent = user.RememberMe, // Keep session active if RememberMe is checked
-                            ExpiresUtc = DateTimeOffset.UtcNow.AddHours(24) // Set expiration to 2 hours
+                            ExpiresUtc = DateTimeOffset.UtcNow.AddHours(24) 
                         };
                         // Sign in using ASP.NET Core Identity's sign-in manager
                         await _signIn.SignInWithClaimsAsync(account, authProperties, claims);
@@ -99,35 +100,41 @@ namespace Gym_System.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> RegisterUser(RegistrationUserModel newUser)
         {
+            // Always repopulate dropdown lists before returning the view
+            newUser.MembershipsList = await _userservices.GetMemberShipList();
+            newUser.TrainerList = await _userservices.GetTrainerListNameAsync();
+
             if (ModelState.IsValid)
             {
                 var existingUser = await _userservices.GetUserByUserName(newUser.UserName);
-                newUser.MembershipsList = await _userservices.GetMemberShipList();
-                newUser.TrainerList =await _userservices.GetTrainerListNameAsync();
+                var userbyemail = await _userservices.GetUserByEmail(newUser.Email);
+                var userbyphhone = await _userservices.GetUserByPhone(newUser.PhoneNum);
+                var userbyname = await _userservices.GetUserByName(newUser.Name);
 
+                // Check for duplicate data and add model errors if needed
                 if (existingUser != null)
                 {
                     ModelState.AddModelError("UserName", "Username already exists! Please choose another one.");
-                    return View(newUser); // Stay on the registration page and show the error
                 }
-                var userbyemail = await _userservices.GetUserByEmail(newUser.Email);
                 if (userbyemail != null && !string.IsNullOrEmpty(userbyemail.Email))
                 {
                     ModelState.AddModelError("Email", "Email already exists! Please choose another one.");
-                    return View(newUser); // Stay on the registration page and show the error
                 }
-                var userbyphhone = await _userservices.GetUserByPhone(newUser.PhoneNum);
                 if (userbyphhone != null)
                 {
-                    ModelState.AddModelError("PhoneNum", "Phone already exists! Please choose another one.");
-                    return View(newUser); // Stay on the registration page and show the error
+                    ModelState.AddModelError("PhoneNum", "Phone number already exists! Please choose another one.");
                 }
-                var userbyname = await _userservices.GetUserByName(newUser.Name);
                 if (userbyname != null)
                 {
-                    ModelState.AddModelError("Name", "Username already exists! Please choose another one.");
-                    return View(newUser); // Stay on the registration page and show the error
+                    ModelState.AddModelError("Name", "Name already exists! Please choose another one.");
                 }
+
+                // If errors exist, return the view with data
+                if (!ModelState.IsValid)
+                {
+                    return View(newUser);
+                }
+
                 // Step 1: Map the ApplicationUser
                 ApplicationUser userAccount = _userservices.RegisterUser(newUser);
 
@@ -139,34 +146,39 @@ namespace Gym_System.Controllers
                     // Step 3: Assign roles if provided
                     if (!string.IsNullOrEmpty(newUser.Role))
                     {
-                        var validRoles = new[] { "SubAdmin", "Trainer", "Client" };
+                        var validRoles = new[] { "SubAdmin","Trainer", "Client" };
                         var TrainerOrSubAdmin = new[] { "SubAdmin", "Trainer" };
+
                         if (!validRoles.Contains(newUser.Role))
                         {
                             ModelState.AddModelError("", "Invalid role selected.");
                             return View(newUser);
                         }
+
                         if (TrainerOrSubAdmin.Contains(newUser.Role))
                         {
                             userAccount.MembershipState = "Active";
                         }
-                        
+
                         await _userManager.AddToRoleAsync(userAccount, newUser.Role);
-                        if(newUser.Discount>0  )
+
+                        if (newUser.Discount > 0)
                         {
                             await _userservices.AddDiscount(newUser.Id, newUser.Discount);
                         }
                     }
-                    if(newUser.Role== "Trainer")
+
+                    if (newUser.Role == "Trainer")
                     {
                         return RedirectToAction("AddTrainerPercentage", "Trainer");
                     }
-                    else if(newUser.Role== "SubAdmin")
+                    else if (newUser.Role == "SubAdmin")
                     {
                         return RedirectToAction("RegisterUser");
                     }
+
                     // Step 5: Redirect to AddTransaction
-                    return RedirectToAction("AddTransaction", "Transaction");
+                    return RedirectToAction("RegisterUser");
                 }
                 else
                 {
@@ -178,6 +190,7 @@ namespace Gym_System.Controllers
                 }
             }
 
+            // Return view with populated data if there were errors
             return View(newUser);
         }
 

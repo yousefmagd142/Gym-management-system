@@ -26,6 +26,7 @@ body {
     display: flex;
     align-items: center;
     border-radius: 4px; /* Adjust if needed */
+    color: black !important; /* Ensure text inside the Select2 box is black */
 }
 
     /* Adjust text alignment inside Select2 */
@@ -33,17 +34,20 @@ body {
         line-height: normal !important;
         padding: 6px 12px; /* Adjust padding for better text alignment */
         font-size: 16px; /* Adjust if text looks too big or small */
+        color: black !important; /* Ensure selected option text is black */
     }
 
 /* Ensure the dropdown matches the same style */
 .select2-dropdown {
     font-size: 16px;
+    color: black !important; /* Ensure dropdown options are black */
 }
 
 /* Fix dropdown height issues */
 .select2-selection__rendered {
     padding-top: 5px;
     padding-bottom: 5px;
+    color: black !important; /* Ensure selected value is black */
 }
 
 /* Set consistent width */

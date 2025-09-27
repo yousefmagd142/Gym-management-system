@@ -6,104 +6,124 @@
 
 <h1>Register</h1>
 <hr />
-<body >
-        <!-- Form Section -->
-        <form asp-action="RegisterUser">
+
+<body>
+    <!-- Form Section -->
+    <form asp-action="RegisterUser" method="post">
         <div class="row">
 
             <div class="col-md-4">
-@*                     <div asp-validation-summary="All" class="text-danger"></div>
- *@                    <div class="form-group">
-                        <label asp-for="Id" class="control-label"></label>
-                        <input asp-for="Id" class="form-control" value="@ViewBag.UserId" />
-                        <span asp-validation-for="Id" class="text-danger"></span>
+@*                 <div asp-validation-summary="All" class="text-danger"></div>
+ *@
+                <div class="form-group">
+                    <label asp-for="Id" class="control-label"></label>
+                    <input asp-for="Id" class="form-control" value="@Model?.Id"  />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label"></label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" type="email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PhoneNum" class="control-label"></label>
+                    <input asp-for="PhoneNum" value="2" class="form-control" />
+                    <span asp-validation-for="PhoneNum" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" value="trytry@A123" type="password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+@* 
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword" class="control-label"></label>
+                    <input asp-for="ConfirmPassword" type="password" class="form-control" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div> *@
+
+                <div>
+                    <label>Select Role:</label><br />
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="Role" value="SubAdmin" onclick="toggleMembership()" />
+                        <label class="form-check-label">SubAdmin</label>
                     </div>
-                    <div class="form-group">
-                        <label asp-for="Name" class="control-label"></label>
-                        <input asp-for="Name" class="form-control" />
-                        <span asp-validation-for="Name" class="text-danger"></span>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="Role" value="Trainer" onclick="toggleMembership()" />
+                        <label class="form-check-label">Trainer</label>
                     </div>
-                    <div class="form-group">
-                        <label asp-for="UserName" class="control-label"></label>
-                        <input asp-for="UserName" class="form-control" />
-                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" asp-for="Role" value="Client" checked onclick="toggleMembership()"   />
+                        <label class="form-check-label">Client</label>
                     </div>
-                    <div class="form-group">
-                        <label asp-for="Email" class="control-label"></label>
-                        <input asp-for="Email" type="email" class="form-control" />
-                        <span asp-validation-for="Email" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="PhoneNum" class="control-label"></label>
-                        <input asp-for="PhoneNum" value="2" class="form-control" />
-                        <span asp-validation-for="PhoneNum" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Password" class="control-label"></label>
-                        <input asp-for="Password" class="form-control" />
-                        <span asp-validation-for="Password" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="ConfirmPassword" class="control-label"></label>
-                        <input asp-for="ConfirmPassword" class="form-control" />
-                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-                    </div>
-                    <div>
-                        <label>Select Role:</label><br />
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="SubAdmin" name="Role" value="SubAdmin" onclick="toggleMembership()" />
-                            <label class="form-check-label" for="SubAdmin">SubAdmin</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="Trainer" name="Role" value="Trainer" onclick="toggleMembership()" />
-                            <label class="form-check-label" for="Trainer">Trainer</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" id="Client" name="Role" value="Client" checked onclick="toggleMembership()" />
-                            <label class="form-check-label" for="Client">Client</label>
-                        </div>
-                        <span asp-validation-for="Role" class="text-danger"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Create" class="btn btn-primary" />
-                    </div>
+                    <span asp-validation-for="Role" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
             </div>
+
             <!-- Membership Section -->
             <div class="col-md-4">
-@*                 <div asp-validation-summary="All" class="text-danger"></div>
- *@                <div class="form-group">
+                <div class="form-group">
                     <label asp-for="MembrtshipsId" class="control-label">Membership</label>
-                    <select asp-for="MembrtshipsId" id="MembershipDropdown" class="form-control">
-                        @foreach (var item in Model.MembershipsList)
+                    <select asp-for="MembrtshipsId" id="MembershipDropdown" class="form-control" required>
+                        <option value="" disabled selected>-- Select Membership --</option>
+                        @if (Model?.MembershipsList != null)
                         {
-                            <option value="@item.Value">@item.Text</option>
+                            foreach (var item in Model.MembershipsList)
+                            {
+                                <option value="@item.Value">@item.Text</option>
+                            }
                         }
-                        <option value="" selected disabled>-- Select Membership --</option>
                     </select>
                     <span asp-validation-for="MembrtshipsId" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="MembershipStartDate" class="control-label">Membership Start Date</label>
                     <input asp-for="MembershipStartDate" id="MembershipStartDate" type="datetime-local" class="form-control"
-                           value="@Model.MembershipStartDate.ToString("yyyy-MM-ddTHH:mm")" />
+                           value="@Model?.MembershipStartDate.ToString("yyyy-MM-ddTHH:mm")" />
                     <span asp-validation-for="MembershipStartDate" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="AllowDays" class="control-label">Allow Days</label>
                     <input asp-for="AllowDays" id="AllowDays" type="number" class="form-control" min="0" step="1" />
                     <span asp-validation-for="AllowDays" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="TrainerId" class="control-label">Trainer</label>
                     <select asp-for="TrainerId" id="TrainerDropDown" class="form-control">
-                        @foreach (var item in Model.TrainerList)
+                        <option value="" disabled selected>-- Select Trainer --</option>
+                        @if (Model?.TrainerList != null)
                         {
-                            <option value="@item.Value">@item.Text</option>
+                            foreach (var item in Model.TrainerList)
+                            {
+                                <option value="@item.Value">@item.Text</option>
+                            }
                         }
-                        <option value="" selected disabled>-- Select Trainer --</option>
                     </select>
                     <span asp-validation-for="TrainerId" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="Discount" class="control-label">Discount</label>
                     <input asp-for="Discount" id="Discount" type="number" class="form-control" min="0" step="10" />
@@ -111,45 +131,37 @@
                 </div>
             </div>
         </div>
-
-        </form>
-
+    </form>
 
     <script>
         function toggleMembership() {
-            // Get the selected radio button
             const subAdmin = document.getElementById("SubAdmin");
             const trainer = document.getElementById("Trainer");
             const membershipDropdown = document.getElementById("MembershipDropdown");
             const MembershipStartDate = document.getElementById("MembershipStartDate");
             const AllowDays = document.getElementById("AllowDays");
             const Discount = document.getElementById("Discount");
+            const TrainerDropDown = document.getElementById("TrainerDropDown");
 
-            // Disable membership dropdown if "SubAdmin" or "Trainer" is selected
             if (subAdmin.checked || trainer.checked) {
                 membershipDropdown.disabled = true;
-                Discount.disabled=true;
-                TrainerDropDown.disabled=true;
+                Discount.disabled = true;
+                TrainerDropDown.disabled = true;
                 MembershipStartDate.disabled = true;
                 AllowDays.disabled = true;
             } else {
                 membershipDropdown.disabled = false;
-                Discount.disabled=false;
-                TrainerDropDown.disabled=false;
+                Discount.disabled = false;
+                TrainerDropDown.disabled = false;
                 MembershipStartDate.disabled = false;
                 AllowDays.disabled = false;
             }
-
         }
     </script>
-
-
-@* <div>
-    <a asp-action="LogIn">Back to LogIn</a>
-</div> *@
 </body>
 
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

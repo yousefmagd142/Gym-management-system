@@ -14,7 +14,22 @@
                         </option>
                     }
                 </select>
-                <button type="submit" class="btn btn-primary">Get Report</button>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary">Get Report</button>
+                    <div>
+                    <button type="button" class="btn btn-secondary" onclick="window.location.href='@Url.Action("AddTransaction", "Transaction")'">
+                        Transaction
+                    </button>
+                    <button type="button" class="btn btn-secondary" onclick="window.location.href='@Url.Action("UpdateUser", "AccountUser")'">
+                        Update
+                    </button>
+                        <button type="button" class="btn btn-secondary" onclick="window.location.href='@Url.Action("RenewMembership", "Membership")'">
+                        Renew
+                    </button>
+                        
+                    </div>
+
+                </div>
             </form>
         </div>
     </div>
@@ -57,7 +72,10 @@
                             <td>Membership remain days</td>
                             <td>@(Model.RemainDays + Model.FreezDays)</td>
                         </tr>
-
+                        <tr>
+                            <td>Client Phone</td>
+                            <td>@(Model.ClientPhone)</td>
+                        </tr>
                         @if (Model.FreezDays > 0)
                         {
                             <tr>
@@ -79,8 +97,8 @@
                         </tr>
                     }
                     <tr>
-                        <td>Total Paid</td>
-                        <td>@Model.Paid.ToString()</td>
+                        <td>Balance</td>
+                        <td>@Model.Balance.ToString()</td>
                     </tr>
                 </tbody>
             </table>

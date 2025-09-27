@@ -12,6 +12,7 @@ namespace Gym_System.ViewModel
         public string PhoneNum { get; set; } = string.Empty;
         public string UserName { get; set; } = string.Empty;
         public int AllowDays { get; set; }
+        public int? FreezeDays { get; set; }
         public decimal Balance { get; set; }
         public DateTime JoinDate { get; set; } = DateTime.Now;
         public DateTime MembershipStartDate { get; set; } = DateTime.Now;

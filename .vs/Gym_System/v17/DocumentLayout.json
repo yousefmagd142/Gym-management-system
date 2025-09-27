@@ -3,40 +3,47 @@
   "WorkspaceRootPath": "D:\\Gym_System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\views\\membership\\renewmembership.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\views\\membership\\renewmembership.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\views\\accountuser\\registeruser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\views\\accountuser\\registeruser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\views\\freeze\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\views\\freeze\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\controllers\\freezecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\controllers\\freezecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\Downloads\\VideoPortal\\VideoPortal\\VideoPortal.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\views\\accountuser\\updateuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\views\\accountuser\\updateuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\controllers\\accountusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\controllers\\accountusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\gym_system.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\gym_system.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\repository\\registraionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\repository\\registraionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\viewmodel\\updateuserviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\viewmodel\\updateuserviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\controllers\\accountusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\controllers\\accountusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\migrations\\20250128064104_add_freeze_table.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\migrations\\20250128064104_add_freeze_table.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\migrations\\20250128064104_add_freeze_table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\migrations\\20250128064104_add_freeze_table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +53,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,68 +61,88 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "site.css",
-              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "Gym_System\\wwwroot\\css\\site.css",
-              "ToolTip": "D:\\Gym_System\\Gym_System\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "Gym_System\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAABAAAAAAAAAAAAAswC0AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-25T19:32:57.42Z",
+              "DocumentIndex": 1,
+              "Title": "RegisterUser.cshtml",
+              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Views\\AccountUser\\RegisterUser.cshtml",
+              "RelativeDocumentMoniker": "Gym_System\\Views\\AccountUser\\RegisterUser.cshtml",
+              "ToolTip": "D:\\Gym_System\\Gym_System\\Views\\AccountUser\\RegisterUser.cshtml",
+              "RelativeToolTip": "Gym_System\\Views\\AccountUser\\RegisterUser.cshtml",
+              "ViewState": "AgIAAE8AAAAAmZmZmZkfwFUAAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-27T17:59:04.532Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "site.js",
-              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\wwwroot\\js\\site.js",
-              "RelativeDocumentMoniker": "Gym_System\\wwwroot\\js\\site.js",
-              "ToolTip": "D:\\Gym_System\\Gym_System\\wwwroot\\js\\site.js",
-              "RelativeToolTip": "Gym_System\\wwwroot\\js\\site.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-02-25T19:14:55.003Z",
+              "Title": "VideoPortal.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\VideoPortal\\VideoPortal\\VideoPortal.csproj",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\VideoPortal\\VideoPortal\\VideoPortal.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-10T22:19:04.667Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Gym_System\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Gym_System\\Gym_System\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Gym_System\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "RenewMembership.cshtml",
+              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Views\\Membership\\RenewMembership.cshtml",
+              "RelativeDocumentMoniker": "Gym_System\\Views\\Membership\\RenewMembership.cshtml",
+              "ToolTip": "D:\\Gym_System\\Gym_System\\Views\\Membership\\RenewMembership.cshtml",
+              "RelativeToolTip": "Gym_System\\Views\\Membership\\RenewMembership.cshtml",
+              "ViewState": "AgIAABsAAACAZmZmZmYkwCMAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-25T18:58:47.609Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FreezeController.cs",
-              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Controllers\\FreezeController.cs",
-              "RelativeDocumentMoniker": "Gym_System\\Controllers\\FreezeController.cs",
-              "ToolTip": "D:\\Gym_System\\Gym_System\\Controllers\\FreezeController.cs",
-              "RelativeToolTip": "Gym_System\\Controllers\\FreezeController.cs",
-              "ViewState": "AgIAAEEAAAAANDMzMzMbwE8AAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T18:31:36.159Z",
+              "WhenOpened": "2025-07-11T23:40:54.149Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Views\\Freeze\\Index.cshtml",
-              "RelativeDocumentMoniker": "Gym_System\\Views\\Freeze\\Index.cshtml",
-              "ToolTip": "D:\\Gym_System\\Gym_System\\Views\\Freeze\\Index.cshtml",
-              "RelativeToolTip": "Gym_System\\Views\\Freeze\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Title": "UpdateUser.cshtml",
+              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
+              "RelativeDocumentMoniker": "Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
+              "ToolTip": "D:\\Gym_System\\Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
+              "RelativeToolTip": "Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
+              "ViewState": "AgIAAEYAAAAAAAAAAAASwE8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-25T18:20:24.024Z",
+              "WhenOpened": "2025-07-11T23:27:17.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\appsettings.json",
+              "RelativeDocumentMoniker": "Gym_System\\appsettings.json",
+              "ToolTip": "D:\\Gym_System\\Gym_System\\appsettings.json",
+              "RelativeToolTip": "Gym_System\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-11T23:14:53.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Gym_System",
+              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Gym_System.csproj",
+              "RelativeDocumentMoniker": "Gym_System\\Gym_System.csproj",
+              "ToolTip": "D:\\Gym_System\\Gym_System\\Gym_System.csproj",
+              "RelativeToolTip": "Gym_System\\Gym_System.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-07-11T23:22:06.193Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Program.cs",
+              "RelativeDocumentMoniker": "Gym_System\\Program.cs",
+              "ToolTip": "D:\\Gym_System\\Gym_System\\Program.cs",
+              "RelativeToolTip": "Gym_System\\Program.cs",
+              "ViewState": "AgIAADUAAACAMzMzMzMbwEEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T23:14:13.267Z"
             },
             {
               "$type": "Document",
@@ -125,48 +152,45 @@
               "RelativeDocumentMoniker": "Gym_System\\Repository\\RegistraionRepo.cs",
               "ToolTip": "D:\\Gym_System\\Gym_System\\Repository\\RegistraionRepo.cs",
               "RelativeToolTip": "Gym_System\\Repository\\RegistraionRepo.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAIAwwGgAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAUwGAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T18:03:58.591Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-11T23:10:05.726Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UpdateUser.cshtml",
-              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
-              "RelativeDocumentMoniker": "Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
-              "ToolTip": "D:\\Gym_System\\Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
-              "RelativeToolTip": "Gym_System\\Views\\AccountUser\\UpdateUser.cshtml",
-              "ViewState": "AgIAAHAAAAAAAAAAAABQPY4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-19T17:56:23.626Z",
-              "EditorCaption": ""
+              "DocumentIndex": 9,
+              "Title": "20250128064104_add_freeze_table.Designer.cs",
+              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Migrations\\20250128064104_add_freeze_table.Designer.cs",
+              "RelativeDocumentMoniker": "Gym_System\\Migrations\\20250128064104_add_freeze_table.Designer.cs",
+              "ToolTip": "D:\\Gym_System\\Gym_System\\Migrations\\20250128064104_add_freeze_table.Designer.cs",
+              "RelativeToolTip": "Gym_System\\Migrations\\20250128064104_add_freeze_table.Designer.cs",
+              "ViewState": "AgIAAMsBAAAAAAAAAAAWwNkBAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T22:48:23.768Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
+              "Title": "20250128064104_add_freeze_table.cs",
+              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Migrations\\20250128064104_add_freeze_table.cs",
+              "RelativeDocumentMoniker": "Gym_System\\Migrations\\20250128064104_add_freeze_table.cs",
+              "ToolTip": "D:\\Gym_System\\Gym_System\\Migrations\\20250128064104_add_freeze_table.cs",
+              "RelativeToolTip": "Gym_System\\Migrations\\20250128064104_add_freeze_table.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAArwCwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T22:48:21.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "AccountUserController.cs",
               "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Controllers\\AccountUserController.cs",
               "RelativeDocumentMoniker": "Gym_System\\Controllers\\AccountUserController.cs",
               "ToolTip": "D:\\Gym_System\\Gym_System\\Controllers\\AccountUserController.cs",
               "RelativeToolTip": "Gym_System\\Controllers\\AccountUserController.cs",
-              "ViewState": "AgIAAMwAAAAANDMzMzMbwOgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAEBAAAAAAAAAAAkwBwBAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T17:55:16.292Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UpdateUserViewModel.cs",
-              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\ViewModel\\UpdateUserViewModel.cs",
-              "RelativeDocumentMoniker": "Gym_System\\ViewModel\\UpdateUserViewModel.cs",
-              "ToolTip": "D:\\Gym_System\\Gym_System\\ViewModel\\UpdateUserViewModel.cs",
-              "RelativeToolTip": "Gym_System\\ViewModel\\UpdateUserViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T17:54:05.114Z",
+              "WhenOpened": "2025-07-11T22:33:50.893Z",
               "EditorCaption": ""
             }
           ]
