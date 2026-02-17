@@ -138,7 +138,7 @@ namespace Gym_System.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Attendances", (string)null);
+                    b.ToTable("Attendances");
                 });
 
             modelBuilder.Entity("Gym_System.Models.CheckOut", b =>
@@ -160,7 +160,7 @@ namespace Gym_System.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("CheckOuts", (string)null);
+                    b.ToTable("CheckOuts");
                 });
 
             modelBuilder.Entity("Gym_System.Models.ClintDiscount", b =>
@@ -182,7 +182,7 @@ namespace Gym_System.Migrations
 
                     b.HasIndex("ClintId");
 
-                    b.ToTable("ClintDiscounts", (string)null);
+                    b.ToTable("ClintDiscounts");
                 });
 
             modelBuilder.Entity("Gym_System.Models.Expenses", b =>
@@ -211,7 +211,7 @@ namespace Gym_System.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Expenses", (string)null);
+                    b.ToTable("Expenses");
                 });
 
             modelBuilder.Entity("Gym_System.Models.Freeze", b =>
@@ -234,9 +234,31 @@ namespace Gym_System.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
-                    b.ToTable("Freezes", (string)null);
+                    b.ToTable("Freezes");
+                });
+
+            modelBuilder.Entity("Gym_System.Models.Link", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("FingerPring")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Links");
                 });
 
             modelBuilder.Entity("Gym_System.Models.Membrtship", b =>
@@ -262,7 +284,7 @@ namespace Gym_System.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Membrtships", (string)null);
+                    b.ToTable("Membrtships");
                 });
 
             modelBuilder.Entity("Gym_System.Models.TrainerPercentage", b =>
@@ -284,7 +306,7 @@ namespace Gym_System.Migrations
 
                     b.HasIndex("TrainerId");
 
-                    b.ToTable("TrainerPercentages", (string)null);
+                    b.ToTable("TrainerPercentages");
                 });
 
             modelBuilder.Entity("Gym_System.Models.Transaction", b =>
@@ -299,7 +321,6 @@ namespace Gym_System.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Paid")
@@ -313,7 +334,7 @@ namespace Gym_System.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Transactions", (string)null);
+                    b.ToTable("Transactions");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -511,8 +532,8 @@ namespace Gym_System.Migrations
             modelBuilder.Entity("Gym_System.Models.Freeze", b =>
                 {
                     b.HasOne("Gym_System.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
+                        .WithOne("Freezes")
+                        .HasForeignKey("Gym_System.Models.Freeze", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -597,6 +618,8 @@ namespace Gym_System.Migrations
                     b.Navigation("Attendances");
 
                     b.Navigation("Clients");
+
+                    b.Navigation("Freezes");
 
                     b.Navigation("Transactions");
                 });

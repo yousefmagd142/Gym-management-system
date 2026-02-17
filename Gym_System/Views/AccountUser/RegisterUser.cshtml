@@ -17,7 +17,7 @@
  *@
                 <div class="form-group">
                     <label asp-for="Id" class="control-label"></label>
-                    <input asp-for="Id" class="form-control" value="@Model?.Id"  />
+                    <input name="Id" class="form-control" value="@ViewBag.UserId" />
                     <span asp-validation-for="Id" class="text-danger"></span>
                 </div>
 
@@ -129,6 +129,11 @@
                     <input asp-for="Discount" id="Discount" type="number" class="form-control" min="0" step="10" />
                     <span asp-validation-for="Discount" class="text-danger"></span>
                 </div>
+                <div class="form-group">
+                    <label asp-for="PaidTransaction" class="control-label">Payment</label>
+                    <input name="PaidTransaction" id="PaidTransaction" type="number" class="form-control" min="0" step="10" required />
+                    <span asp-validation-for="PaidTransaction" class="text-danger"></span>
+                </div>
             </div>
         </div>
     </form>
@@ -142,6 +147,7 @@
             const AllowDays = document.getElementById("AllowDays");
             const Discount = document.getElementById("Discount");
             const TrainerDropDown = document.getElementById("TrainerDropDown");
+            const PaidTransaction = document.getElementById("PaidTransaction");
 
             if (subAdmin.checked || trainer.checked) {
                 membershipDropdown.disabled = true;
@@ -149,12 +155,14 @@
                 TrainerDropDown.disabled = true;
                 MembershipStartDate.disabled = true;
                 AllowDays.disabled = true;
+                PaidTransaction.disabled = true;
             } else {
                 membershipDropdown.disabled = false;
                 Discount.disabled = false;
                 TrainerDropDown.disabled = false;
                 MembershipStartDate.disabled = false;
                 AllowDays.disabled = false;
+                PaidTransaction.disabled = false;
             }
         }
     </script>

@@ -13,6 +13,7 @@ namespace Gym_System.Models
             base.OnModelCreating(builder);
         }
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Link> Links { get; set; }
         public DbSet<Membrtship> Membrtships { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Transaction> Transactions { get; set; }

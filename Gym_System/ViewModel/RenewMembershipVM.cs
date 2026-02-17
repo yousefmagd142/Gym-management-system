@@ -13,6 +13,7 @@ namespace Gym_System.ViewModel
         public DateTime MembershipStartDate { get; set; } = DateTime.Now;
         [Range(0, int.MaxValue, ErrorMessage = "Discount must be a positive number.")]
         public int Discount { get; set; }
-
+        public decimal PaidTransaction { get; set; }
+        public string DescriptionTransaction { get; set; } = "First Payment";
     }
 }

@@ -5,7 +5,7 @@ namespace Gym_System.ViewModel
     public class TransactionViewModel
     {
         public decimal Paid { get; set; }
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; } = string.Empty;
         public DateTime DateTime { get; set; }=DateTime.Now;
         public string UserId { get; set; }=string.Empty;
 

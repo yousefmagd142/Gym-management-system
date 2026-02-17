@@ -4,7 +4,6 @@
     <div class="row">
         <div class="col-6">
             <h2>Renew Membership</h2>
-
             <form asp-action="RenewMembershippost" method="post">
                 <!-- Select User Dropdown -->
                 <div class="form-group">
@@ -51,10 +50,23 @@
                     <input asp-for="Discount" id="Discount" type="number" class="form-control" min="0" step="10" />
                     <span asp-validation-for="Discount" class="text-danger"></span>
                 </div>
-
+                <div class="form-group">
+                    <label asp-for="PaidTransaction" class="control-label">Payment</label>
+                    <input name="PaidTransaction" id="Discount"
+                           type="number" class="form-control"
+                           min="0" step="10" required/>
+                    <span asp-validation-for="PaidTransaction" class="text-danger"></span>
+                </div>
                 <!-- Submit -->
                 <button type="submit" class="btn btn-info mt-2">Renew</button>
             </form>
+        </div>
+        <div class="col-3">
+            <h2>.</h2>
+            <div class="form-group">
+                <label class="control-label">User Balance</label>
+                <input disabled id="Balance" type="number" class="form-control" min="0" step="10" />
+            </div>
         </div>
     </div>
 </body>
@@ -76,12 +88,13 @@
                     document.getElementById('membershipDropdown').value = data.membershipid || '';
                     document.getElementById('memvalue').value = data.membershipid || '';
                     document.getElementById('SelectedUserId').value = data.id || '';
+                    document.getElementById('Balance').value = data.balance || '';
                 })
                 .catch(error => {
                     console.error('Error fetching membership details:', error);
                 });
         } else {
-            ['Name', 'AllowDays', 'Discount', 'MembershipStartDate', 'membershipDropdown', 'SelectedUserId'].forEach(id => {
+            ['Name', 'AllowDays', 'Discount', 'MembershipStartDate', 'membershipDropdown', 'SelectedUserId','Balance'].forEach(id => {
                 document.getElementById(id).value = '';
             });
         }

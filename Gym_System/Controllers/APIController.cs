@@ -28,8 +28,12 @@ namespace Gym_System.Controllers
                 return BadRequest(new { exists = false, message = "ID cannot be null or empty." });
             }
 
-            var user = await _db.ApplicationUsers.FirstOrDefaultAsync(u => u.Id == id);
-
+            var checkuserfingerpring = await _db.Links.FirstOrDefaultAsync(u => u.FingerPring == id);
+            if(checkuserfingerpring == null)
+            {
+                return RedirectToAction("RegisterUser", "AccountUser", new { id = id });
+            }
+            var user = await _db.ApplicationUsers.FirstOrDefaultAsync(u => u.Id == checkuserfingerpring.UserId);
             var userisfroozen = await _db.Freezes.FirstOrDefaultAsync(i=>i.UserId == id && i.MemberShepStartDate==user.MembershipStartDate);
             var membership = await _db.Membrtships.FirstOrDefaultAsync(i => i.Id == user.MembrtshipsId);
                     var membershipstartdate = user.MembershipStartDate;

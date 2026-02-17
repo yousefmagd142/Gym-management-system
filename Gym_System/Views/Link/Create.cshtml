@@ -1,0 +1,43 @@
+﻿@model Gym_System.Models.Link
+
+@{
+    ViewData["Title"] = "Link FingerPrint";
+}
+
+<h2>Link FingerPrint To User</h2>
+
+<form asp-action="Create" method="post">
+
+    <div class="form-group mb-3">
+
+        <label>FingerPrint ID</label>
+
+        <input asp-for="FingerPring"
+               class="form-control"
+               placeholder="Enter FingerPrint ID"
+               required />
+
+    </div>
+
+
+    <div class="form-group mb-3">
+
+        <label>Select User</label>
+
+        <select asp-for="UserId"
+                asp-items="ViewBag.Users"
+                class="form-control"
+                required>
+
+            <option value="">-- Select User --</option>
+
+        </select>
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">
+        Save Link
+    </button>
+
+</form>

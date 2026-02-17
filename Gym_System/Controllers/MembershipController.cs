@@ -1,4 +1,5 @@
-﻿using Gym_System.Repository;
+﻿using Gym_System.Models;
+using Gym_System.Repository;
 using Gym_System.ViewModel;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,9 +10,13 @@ namespace Gym_System.Controllers
     public class MembershipController : Controller
     {
         private readonly IRegistraionRepo _userservices;
-        public MembershipController(IRegistraionRepo Userservices)
+        private readonly ApplicationDbContext _db;
+
+        public MembershipController(IRegistraionRepo Userservices, ApplicationDbContext Db)
         {
             _userservices = Userservices;
+            _db = Db;
+
         }
         //------------------------- MemberShips --------------------------------
         [HttpGet]
@@ -136,6 +141,29 @@ namespace Gym_System.Controllers
                 {
                     await _userservices.UpdateDiscountAsync(model.SelectedUserId, model.Discount);
                 }
+                var transaction = new Transaction
+                {
+                    Paid = model.PaidTransaction,
+                    Description = model.DescriptionTransaction,
+                    DateTime = DateTime.Now,
+                    UserId = model.SelectedUserId,
+                };
+
+                await _db.Transactions.AddAsync(transaction); // Add the transaction to the database
+
+                var user = await _db.ApplicationUsers.FindAsync(transaction.UserId);
+                if (user != null)
+                {
+                    user.Balance -= transaction.Paid; // Assuming "Paid" affects the balance positively
+                    _db.ApplicationUsers.Update(user);
+                }
+                await _db.SaveChangesAsync();
+                if (user.Balance <= 0)
+                {
+                    user.MembershipState = "Active";
+                    _db.ApplicationUsers.Update(user);
+                    await _db.SaveChangesAsync();
+                }
             }
             var model2 = await _userservices.GetMemberShipListForMembership();
 
@@ -169,7 +197,8 @@ namespace Gym_System.Controllers
                 allowDays = user.AllowDays,
                 membershipStartDate = user.MembershipStartDate.AddDays(user.Membrtships?.DurationInDays ?? 0).AddDays(user.Freezes?.FreezeDays ?? 0).ToString("yyyy-MM-dd"),
                 discount = Discountuser,
-                membershipid = user.MembrtshipsId
+                membershipid = user.MembrtshipsId,
+                balance= user.Balance
             });
         }
     }

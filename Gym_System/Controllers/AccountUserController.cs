@@ -1,4 +1,5 @@
-﻿using Gym_System.Models;
+﻿
+using Gym_System.Models;
 using Gym_System.Repository;
 using Gym_System.ViewModel;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -10,6 +11,7 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Gym_System.Controllers
 {
@@ -84,7 +86,7 @@ namespace Gym_System.Controllers
             return View(user);
         }
 
-        [Authorize(Roles = "Admin,SubAdmin")]
+        //[Authorize(Roles = "Admin,SubAdmin")]
         [HttpGet]
         public IActionResult RegisterUser(string id)
         {
@@ -137,12 +139,14 @@ namespace Gym_System.Controllers
 
                 // Step 1: Map the ApplicationUser
                 ApplicationUser userAccount = _userservices.RegisterUser(newUser);
+                
 
                 // Step 2: Save the user using UserManager
                 var result = await _userManager.CreateAsync(userAccount, newUser.Password);
 
                 if (result.Succeeded)
                 {
+
                     // Step 3: Assign roles if provided
                     if (!string.IsNullOrEmpty(newUser.Role))
                     {
@@ -165,6 +169,29 @@ namespace Gym_System.Controllers
                         if (newUser.Discount > 0)
                         {
                             await _userservices.AddDiscount(newUser.Id, newUser.Discount);
+                        }
+                        var transaction = new Transaction
+                        {
+                            Paid = newUser.PaidTransaction,
+                            Description = newUser.DescriptionTransaction,
+                            DateTime = DateTime.Now,
+                            UserId = newUser.Id,
+                        };
+
+                        await _db.Transactions.AddAsync(transaction); // Add the transaction to the database
+
+                        var user = await _db.ApplicationUsers.FindAsync(transaction.UserId);
+                        if (user != null)
+                        {
+                            user.Balance -= transaction.Paid; // Assuming "Paid" affects the balance positively
+                            _db.ApplicationUsers.Update(user);
+                        }
+                        await _db.SaveChangesAsync();
+                        if (user.Balance <= 0)
+                        {
+                            user.MembershipState = "Active";
+                            _db.ApplicationUsers.Update(user);
+                            await _db.SaveChangesAsync();
                         }
                     }
 

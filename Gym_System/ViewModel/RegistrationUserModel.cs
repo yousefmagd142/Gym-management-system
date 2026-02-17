@@ -34,6 +34,10 @@ namespace Gym_System.ViewModel
         public int AllowDays { get; set; }
         [Range(0, int.MaxValue, ErrorMessage = "Discount must be a positive number.")]
         public int Discount { get; set; }
+        [Range(0, int.MaxValue, ErrorMessage = "Paid must be a positive number.")]
+        public decimal PaidTransaction { get; set; }
+        public string DescriptionTransaction { get; set; } = "First Payment";
+        public DateTime DateTimeTransaction { get; set; }
 
         public List<SelectListItem> MembershipsList { get; set; } = new List<SelectListItem>();
         public List<SelectListItem> TrainerList { get; set; } = new List<SelectListItem>();
