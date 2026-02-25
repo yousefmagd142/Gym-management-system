@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "D:\\Gym_System\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\repository\\registraionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\repository\\registraionrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\controllers\\accountusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,20 +23,16 @@
       "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\controllers\\linkcontroller1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\controllers\\apicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Gym_System\\Gym_System\\Migrations\\20260217213702_addfingerpringgg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Gym_System\\Migrations\\20260217213702_addfingerpringgg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\models\\link.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\models\\link.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\views\\link\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\views\\link\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\models\\link.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\models\\link.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|d:\\gym_system\\gym_system\\migrations\\20260217213702_addfingerpringgg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0CF3F53C-C82E-406A-B7B7-3A54BF8F2F14}|Gym_System\\Gym_System.csproj|solutionrelative:gym_system\\migrations\\20260217213702_addfingerpringgg.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,33 +50,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "RegistraionRepo.cs",
+              "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Repository\\RegistraionRepo.cs",
+              "RelativeDocumentMoniker": "Gym_System\\Repository\\RegistraionRepo.cs",
+              "ToolTip": "D:\\Gym_System\\Gym_System\\Repository\\RegistraionRepo.cs",
+              "RelativeToolTip": "Gym_System\\Repository\\RegistraionRepo.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAkwFIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-17T23:30:28.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "APIController.cs",
               "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Controllers\\APIController.cs",
               "RelativeDocumentMoniker": "Gym_System\\Controllers\\APIController.cs",
               "ToolTip": "D:\\Gym_System\\Gym_System\\Controllers\\APIController.cs",
               "RelativeToolTip": "Gym_System\\Controllers\\APIController.cs",
-              "ViewState": "AgIAADEAAAAAMzMzMzMrwDUAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAmpmZmZkJwGYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T21:45:07.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AccountUserController.cs",
               "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Controllers\\AccountUserController.cs",
               "RelativeDocumentMoniker": "Gym_System\\Controllers\\AccountUserController.cs",
               "ToolTip": "D:\\Gym_System\\Gym_System\\Controllers\\AccountUserController.cs",
               "RelativeToolTip": "Gym_System\\Controllers\\AccountUserController.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAkwFsAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAPEAAAAAAAAAAAAkwP0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T21:14:05.841Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "20260217213702_addfingerpringgg.cs",
               "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Migrations\\20260217213702_addfingerpringgg.cs",
               "RelativeDocumentMoniker": "Gym_System\\Migrations\\20260217213702_addfingerpringgg.cs",
@@ -85,7 +102,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Views\\Link\\Create.cshtml",
               "RelativeDocumentMoniker": "Gym_System\\Views\\Link\\Create.cshtml",
@@ -93,25 +110,24 @@
               "RelativeToolTip": "Gym_System\\Views\\Link\\Create.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-17T21:13:53.917Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-17T21:13:53.917Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "LinkController1.cs",
               "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Controllers\\LinkController1.cs",
               "RelativeDocumentMoniker": "Gym_System\\Controllers\\LinkController1.cs",
               "ToolTip": "D:\\Gym_System\\Gym_System\\Controllers\\LinkController1.cs",
               "RelativeToolTip": "Gym_System\\Controllers\\LinkController1.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAkwBQAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAADAzMzMzMwqwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-17T21:05:03.993Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Link.cs",
               "DocumentMoniker": "D:\\Gym_System\\Gym_System\\Models\\Link.cs",
               "RelativeDocumentMoniker": "Gym_System\\Models\\Link.cs",
@@ -119,18 +135,17 @@
               "RelativeToolTip": "Gym_System\\Models\\Link.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-17T20:59:30.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-17T20:59:30.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Gym_System\\Gym_System\\appsettings.json",
               "RelativeDocumentMoniker": "Gym_System\\appsettings.json",
               "ToolTip": "D:\\Gym_System\\Gym_System\\appsettings.json",
               "RelativeToolTip": "Gym_System\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAADEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAADDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-02-17T20:29:50.96Z",
               "EditorCaption": ""

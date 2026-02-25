@@ -34,23 +34,7 @@ namespace Gym_System.Controllers
                 return RedirectToAction("RegisterUser", "AccountUser", new { id = id });
             }
             var user = await _db.ApplicationUsers.FirstOrDefaultAsync(u => u.Id == checkuserfingerpring.UserId);
-            var userisfroozen = await _db.Freezes.FirstOrDefaultAsync(i=>i.UserId == id && i.MemberShepStartDate==user.MembershipStartDate);
-            var membership = await _db.Membrtships.FirstOrDefaultAsync(i => i.Id == user.MembrtshipsId);
-                    var membershipstartdate = user.MembershipStartDate;
-                    var membershipduration = membership.DurationInDays;
-                    var membershipmaxvisits = membership.MaxVisits;
-
-                    var attendanceDaysCount = await _db.Attendances
-                        .Where(a => a.UserId == user.Id && a.CheckInTime.Date >= membershipstartdate.Date)
-                        .Select(a => a.CheckInTime.Date)
-                        .Distinct()
-                        .CountAsync();
-
-            if (userisfroozen != null && DateTime.Now < membershipstartdate.AddDays(membershipduration+userisfroozen.FreezeDays) && attendanceDaysCount < membership.MaxVisits) 
-            {
-                return Ok(new { exists = true, message = $"Client has freeze for {userisfroozen.FreezeDays} days." });
-            }
-
+        
             if (user != null)
             {
                 var roles = await _userManager.GetRolesAsync(user);
@@ -65,8 +49,28 @@ namespace Gym_System.Controllers
                     _db.SaveChanges();
                     return Ok(new { exists = true, message = "Employee." });
                 }
+
+
+                var userisfroozen = await _db.Freezes.FirstOrDefaultAsync(i => i.UserId == id && i.MemberShepStartDate == user.MembershipStartDate);
+                var membership = await _db.Membrtships.FirstOrDefaultAsync(i => i.Id == user.MembrtshipsId);
+                var membershipstartdate = user.MembershipStartDate;
+                var membershipduration = membership.DurationInDays;
+                var membershipmaxvisits = membership.MaxVisits;
+
+                var attendanceDaysCount = await _db.Attendances
+                    .Where(a => a.UserId == user.Id && a.CheckInTime.Date >= membershipstartdate.Date)
+                    .Select(a => a.CheckInTime.Date)
+                    .Distinct()
+                    .CountAsync();
+
+                if (userisfroozen != null && DateTime.Now < membershipstartdate.AddDays(membershipduration + userisfroozen.FreezeDays) && attendanceDaysCount < membership.MaxVisits)
+                {
+                    return Ok(new { exists = true, message = $"Client has freeze for {userisfroozen.FreezeDays} days." });
+                }
+
                 if (roles.Contains("Client") && user.MembershipState == "Active")
                 {
+
                     if (DateTime.Now > membershipstartdate.AddDays(membershipduration) || attendanceDaysCount > membership.MaxVisits)
                     {
                         user.MembershipState = "NotActive";

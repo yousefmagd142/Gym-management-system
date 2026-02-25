@@ -193,6 +193,13 @@ namespace Gym_System.Controllers
                             _db.ApplicationUsers.Update(user);
                             await _db.SaveChangesAsync();
                         }
+                        Link link = new Link
+                        {
+                            UserId = newUser.Id,
+                            FingerPring = newUser.Id // Assuming the fingerprint is the same as the user ID for simplicity
+                        };
+                        await _db.Links.AddAsync(link);
+                        await _db.SaveChangesAsync();
                     }
 
                     if (newUser.Role == "Trainer")
